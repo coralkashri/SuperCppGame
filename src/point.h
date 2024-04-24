@@ -16,18 +16,18 @@ struct point {
 
     bool operator==(const point &compare_point);
 
-    int operator*(int multiplier);
-    int operator*(const point &multiplier);
+    point operator*(int multiplier);
+    point operator*(const point &multiplier);
     void operator*=(int multiplier);
     void operator*=(const point &multiplier);
 
-    int operator+(int appends);
-    int operator+(const point &appends);
+    point operator+(int appends);
+    point operator+(const point &appends);
     void operator+=(int appends);
     void operator+=(const point &appends);
 
-    int operator-(int subtrahend);
-    int operator-(const point &subtrahend);
+    point operator-(int subtrahend);
+    point operator-(const point &subtrahend);
     void operator-=(int subtrahend);
     void operator-=(const point &subtrahend);
 };
