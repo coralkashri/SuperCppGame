@@ -9,11 +9,11 @@ point::point() {
 point::point(int x, int y) : x(x), y(y) {
 }
 
-int point::manhatten_distance(const point &second_point) {
+int point::manhattan_distance(const point &second_point) {
     return (std::abs(x) - std::abs(second_point.x) + (std::abs(y) - std::abs(second_point.y)));
 }
 
-std::unique_ptr<std::vector<point>> point::calc_shortest_manhatten_path(const point &destination, const board &playing_board) {
+std::unique_ptr<std::vector<point>> point::calc_shortest_manhattan_path(const point &destination, const board &playing_board) {
     return nullptr; /*TODO: implement*/
 }
 
