@@ -8,7 +8,9 @@ private:
     bool is_still_alive;
 
 public:
-    static const int max_hp = 10;
+    static const int MAX_HP = 1;
+    static const int BASE_SPEED = 1;
+    int speed;
     bool is_still_alive;
 
     entity(const point &location);

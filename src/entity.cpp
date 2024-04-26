@@ -1,6 +1,6 @@
 #include "entity.h"
 
-entity::entity(const point &location) : hit_points(MAX_HP), location(location) {
+entity::entity(const point &location) : hit_points(MAX_HP), location(location), speed(BASE_SPEED) {
     is_still_alive = true;
 }
 
