@@ -27,11 +27,11 @@ point point::operator*(int multiplier) {
 point point::operator*(const point &multiplier) {
     return point(x * multiplier.x, y * multiplier.y);
 }
-void point::operator*=(int multiplier) {
+point point::operator*=(int multiplier) {
     x *= multiplier;
     y *= multiplier;
 }
-void point::operator*=(const point &multiplier) {
+point point::operator*=(const point &multiplier) {
     x *= multiplier.x;
     y *= multiplier.y;
 }
@@ -43,11 +43,11 @@ point point::operator+(int appends) {
 point point::operator+(const point &appends) {
     return point(x + appends.x, y + appends.y);
 }
-void point::operator+=(int appends) {
+point point::operator+=(int appends) {
     x += appends;
     y += appends;
 }
-void point::operator+=(const point &appends) {
+point point::operator+=(const point &appends) {
     x += appends.x;
     y += appends.y;
 }
@@ -58,11 +58,15 @@ point point::operator-(int subtrahend) {
 point point::operator-(const point &subtrahend) {
     return point(x - subtrahend.x, y - subtrahend.y);
 }
-void point::operator-=(int subtrahend) {
+point point::operator-=(int subtrahend) {
     x -= subtrahend;
     y -= subtrahend;
 }
-void point::operator-=(const point &subtrahend) {
+point point::operator-=(const point &subtrahend) {
     x -= subtrahend.x;
     y -= subtrahend.y;
+}
+
+std::ostream &operator<<(std::ostream &os, const point &pt) {
+    return os << "(" << pt.x << ", " << pt.y << ")";
 }

@@ -20,16 +20,18 @@ struct point {
 
     point operator*(int multiplier);
     point operator*(const point &multiplier);
-    void operator*=(int multiplier);
-    void operator*=(const point &multiplier);
+    point operator*=(int multiplier);
+    point operator*=(const point &multiplier);
 
     point operator+(int appends);
     point operator+(const point &appends);
-    void operator+=(int appends);
-    void operator+=(const point &appends);
+    point operator+=(int appends);
+    point operator+=(const point &appends);
 
     point operator-(int subtrahend);
     point operator-(const point &subtrahend);
-    void operator-=(int subtrahend);
-    void operator-=(const point &subtrahend);
+    point operator-=(int subtrahend);
+    point operator-=(const point &subtrahend);
 };
+
+std::ostream &operator<<(std::ostream &os, const point &pt);
