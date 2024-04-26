@@ -8,10 +8,10 @@ private:
     bool is_still_alive;
 
 public:
-    const int max_hp;
+    static const int max_hp = 10;
     bool is_still_alive;
 
-    entity(int max_hp, const point &location);
+    entity(const point &location);
 
     int get_hit_points() const;
     point get_location() const;
