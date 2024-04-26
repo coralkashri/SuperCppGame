@@ -11,9 +11,11 @@ struct point {
     point();
     point(int x, int y);
 
-    int manhattan_distance(const point &second_point);                                                                      // calculate the manhatten distance (non diagonal distance) between "this" point and "second_point"
-    std::unique_ptr<std::vector<point>> calc_shortest_manhattan_path(const point &destination, const board &playing_board); // calculate the shortest path with no diagonals
+    // calculate the manhattan distance (non diagonal distance) between "this" point and "second_point"
+    int manhattan_distance(const point &second_point);
 
+    // calculate the shortest path with no diagonals
+    std::unique_ptr<std::vector<point>> calc_shortest_manhattan_path(const point &destination, const board &playing_board);
     bool operator==(const point &compare_point);
 
     point operator*(int multiplier);

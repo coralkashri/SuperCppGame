@@ -1,3 +1,5 @@
+#include "board.h"
+#include "point.h"
 #include <iostream>
 
 int main() {
