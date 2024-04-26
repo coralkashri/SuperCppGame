@@ -21,50 +21,64 @@ bool point::operator==(const point &compare_point) {
     return x == compare_point.x && y == compare_point.y;
 }
 
-point point::operator*(int multiplier) {
-    return point(x * multiplier, y * multiplier);
+point operator*(point lvalue, int multiplier) {
+    return lvalue *= multiplier;
 }
-point point::operator*(const point &multiplier) {
-    return point(x * multiplier.x, y * multiplier.y);
+point operator*(int multiplier, point rvalue) {
+    return rvalue *= multiplier;
 }
-point point::operator*=(int multiplier) {
+point operator*(point lvalue, const point &multiplier) {
+    return lvalue *= multiplier;
+}
+point &point::operator*=(int multiplier) {
     x *= multiplier;
     y *= multiplier;
+    return *this;
 }
-point point::operator*=(const point &multiplier) {
+point &point::operator*=(const point &multiplier) {
     x *= multiplier.x;
     y *= multiplier.y;
+    return *this;
 }
 
-point point::operator+(int appends) {
-    return point(x + appends, y + appends);
+point operator+(point lvalue, int appends) {
+    return lvalue += appends;
 }
-
-point point::operator+(const point &appends) {
-    return point(x + appends.x, y + appends.y);
+point operator+(int appends, point rvalue) {
+    return rvalue += appends;
 }
-point point::operator+=(int appends) {
+point operator+(point lvalue, const point &appends) {
+    return lvalue += appends;
+}
+point &point::operator+=(int appends) {
     x += appends;
     y += appends;
+    return *this;
 }
-point point::operator+=(const point &appends) {
+point &point::operator+=(const point &appends) {
     x += appends.x;
     y += appends.y;
+    return *this;
 }
 
-point point::operator-(int subtrahend) {
-    return point(x - subtrahend, y - subtrahend);
+point operator-(point lvalue, int subtrahend) {
+    return lvalue -= subtrahend;
 }
-point point::operator-(const point &subtrahend) {
-    return point(x - subtrahend.x, y - subtrahend.y);
+point operator-(int subtrahend, point rvalue) {
+    return rvalue += subtrahend;
 }
-point point::operator-=(int subtrahend) {
+point operator-(point lvalue, const point &subtrahend) {
+    return lvalue -= subtrahend;
+}
+point &point::operator-=(int subtrahend) {
     x -= subtrahend;
     y -= subtrahend;
+    return *this;
 }
-point point::operator-=(const point &subtrahend) {
+point &point::operator-=(const point &subtrahend) {
     x -= subtrahend.x;
     y -= subtrahend.y;
+    return *this;
 }
 
 std::ostream &operator<<(std::ostream &os, const point &pt) {

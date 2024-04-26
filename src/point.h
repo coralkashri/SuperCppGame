@@ -18,20 +18,26 @@ struct point {
     std::unique_ptr<std::vector<point>> calc_shortest_manhattan_path(const point &destination, const board &playing_board);
     bool operator==(const point &compare_point);
 
-    point operator*(int multiplier);
-    point operator*(const point &multiplier);
-    point operator*=(int multiplier);
-    point operator*=(const point &multiplier);
+    point &operator*=(int multiplier);
+    point &operator*=(const point &multiplier);
 
-    point operator+(int appends);
-    point operator+(const point &appends);
-    point operator+=(int appends);
-    point operator+=(const point &appends);
+    point &operator+=(int appends);
+    point &operator+=(const point &appends);
 
-    point operator-(int subtrahend);
-    point operator-(const point &subtrahend);
-    point operator-=(int subtrahend);
-    point operator-=(const point &subtrahend);
+    point &operator-=(int subtrahend);
+    point &operator-=(const point &subtrahend);
 };
+
+point operator*(point lvalue, int multiplier);
+point operator*(int multiplier, point rvalue);
+point operator*(point lvalue, const point &multiplier);
+
+point operator+(point lvalue, int appends);
+point operator+(int appends, point rvalue);
+point operator+(point lvalue, const point &appends);
+
+point operator-(point lvalue, int subtrahend);
+point operator-(int subtrahend, point rvalue);
+point operator-(point lvalue, const point &subtrahend);
 
 std::ostream &operator<<(std::ostream &os, const point &pt);
