@@ -1,7 +1,6 @@
 #include "entity.h"
 
-entity::entity(const point &location) : hit_points(MAX_HP), location(location), speed(BASE_SPEED) {
-    is_still_alive = true;
+entity::entity(const point &location) : hit_points(MAX_HP), location(location), speed(BASE_SPEED), is_still_alive(true) {
 }
 
 int entity::get_hit_points() const {
@@ -20,11 +19,7 @@ void entity::take_damage(int damage) {
 
 void entity::heal(int heal_amount) {
     if (is_still_alive) {
-        if (hit_points + heal_amount > MAX_HP) {
-            hit_points = MAX_HP;
-        } else {
-            hit_points += heal_amount;
-        }
+        hit_points = std::min(MAX_HP, hit_points + heal_amount);
     }
 }
 

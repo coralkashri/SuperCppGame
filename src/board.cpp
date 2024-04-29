@@ -17,7 +17,7 @@ void board::add_entity(const entity *e) {
         return;
     }
 
-    if (std::find(scene.begin(), scene.end(), e) != scene.end()) {
+    if (std::find(scene.begin(), scene.end(), e->get_location()) != scene.end()) {
         std::cout << "point: " << e->get_location() << " is taken.\n";
         return;
     }
