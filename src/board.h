@@ -1,10 +1,12 @@
 #pragma once
 
 #include "entity.h"
+
 #include "point.h"
 #include <vector>
 
 using std::size_t;
+
 class board {
 
 public:

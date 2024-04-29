@@ -1,4 +1,5 @@
 #pragma once
+
 #include "point.h"
 
 class entity {
@@ -22,4 +23,5 @@ public:
     void heal(int heal_amount);
 
     void set_location(const point &next_location);
+
 };
